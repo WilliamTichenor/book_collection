@@ -1,0 +1,29 @@
+<div class="tasks index">
+  <% flash.each do |type, msg| %>
+    <div>
+      <%= msg %>
+    </div>
+  <% end %>
+  <h2>Books</h2>
+
+  <%= link_to("Add New Book", new_task_path, class: 'action new') %>
+
+  <table class="listing" summary="Book list" style="width: 100%;">
+    <tr class="header">
+      <th>#</th>
+      <th>Title</th>
+    </tr>
+    <% @tasks.each do |task| %>
+    <tr>
+      <td><%= task.position %></td>
+      <td><%= task.title %></td>
+      <td><%= task.category&.name || '-' %></td>
+      <td class="actions">
+        <%= link_to("Show", task_path(task), class: 'action show') %>
+        <%= link_to("Edit", edit_task_path(task), class: 'action edit') %>
+        <%= link_to("Delete", delete_task_path(task), class: 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

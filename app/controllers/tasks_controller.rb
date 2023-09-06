@@ -21,6 +21,7 @@ class TasksController < ApplicationController
       # The 'new' action is NOT being called here
       # Assign any instance variables needed
       # @count = Task.count
+      # unused
       render('new')
     end
   end

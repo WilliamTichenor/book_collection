@@ -85,5 +85,6 @@ test:
 production:
   <<: *default
   database: task_manager_production
+  url: <%= ENV['DATABASE_URL'] %>
   username: task_manager
   password: <%= ENV["TASK_MANAGER_DATABASE_PASSWORD"] %>

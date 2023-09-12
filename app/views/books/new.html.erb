@@ -1,10 +1,10 @@
-<%= link_to("Back to List", tasks_path, :class => 'back-link') %>
+<%= link_to("Back to List", books_path, :class => 'back-link') %>
 
-<div class="tasks new">
+<div class="books new">
   <h2>Create Book</h2>
 
-  <%= form_for(@task) do |f| %>
-    <% # url: tasks_path, method: 'post' %>
+  <%= form_for(@book) do |f| %>
+    <% # url: books_path, method: 'post' %>
 
     <%= render(partial: 'form', locals: {f: f}) %>
 
